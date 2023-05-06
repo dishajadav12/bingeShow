@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCreditCard} from '@fortawesome/free-solid-svg-icons'
 import { useParams} from 'react-router-dom';
+import './BookingForm.css'
 
 
 function BookingForm() {
@@ -24,7 +25,7 @@ return (
 <div>
 <div className='main-container-gold'>
       <div className="col-lg-12 col-md-12">
-        <div className="card">
+        <div className="card form-container">
           <div className="card-body">
          
             

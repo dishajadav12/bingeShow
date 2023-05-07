@@ -1,6 +1,5 @@
 
   .form-container{
-    margin-left: -6%;
     background-color: #222326;
     box-shadow: 0 10px 25px rgb(0 0 0 / 5%), 
     0 20px 48px rgb(0 0 0 / 5%), 
@@ -59,7 +58,6 @@
     .form-container{
       font-size: 14px;
       display: block;
-      margin-left: 0%;
       background-color: #222326;
       box-shadow: 0 10px 25px rgb(0 0 0 / 5%), 
       0 20px 48px rgb(0 0 0 / 5%), 

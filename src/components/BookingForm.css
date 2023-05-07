@@ -1,26 +1,6 @@
-.title-container{
-    text-align: center;
-    position: fixed;
-  width: 100%;
-  background: #fbf3d5; 
-  padding-top: 110px;
-  height: 230px;
-  z-index: -1;   
-  }
-  .main-container-gold{
-    position: relative;
-    width: 80%;
-    padding-top: 40px;
-    z-index: 1;
-    text-align: center;
-    margin-left: 20%;
-    margin: 0% auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
   .form-container{
+    margin-left: -6%;
     background-color: #222326;
     box-shadow: 0 10px 25px rgb(0 0 0 / 5%), 
     0 20px 48px rgb(0 0 0 / 5%), 
@@ -73,6 +53,67 @@
     margin: 10px 0px 5px 5px;
     height: 45px;
   
+  }
+
+  @media (max-width:800px){
+    .form-container{
+      font-size: 14px;
+      display: block;
+      margin-left: 0%;
+      background-color: #222326;
+      box-shadow: 0 10px 25px rgb(0 0 0 / 5%), 
+      0 20px 48px rgb(0 0 0 / 5%), 
+      0 1px 4px rgb(0 0 0 / 10%);
+    }
+    .user-info{
+      display: grid;
+    }
+    .payment-info{
+      display: block;
+      padding: 30px 20px;
+      margin-right: 0px;
+      text-align: left;
+      line-height: 50px;
+    
+    }
+    .button-sub{
+      margin-top: 10px;
+      padding: 0px 10px;
+      margin-top: 5%;
+      background-color: #4c4d50;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+    .policy{
+      margin-top: 30px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    
+    .payment-process input{
+      border: solid 1.5px black;
+      border-radius: 5px;
+      padding-left: 8px;
+      font-size: 13px;
+      height: 40px;
+    
+    }
+    .credit-debit{
+      border: solid 3px #009dff;
+      border-radius: 5px;
+      width: 78%;
+      display: flex;
+      justify-content: center;
+      margin: 10px 0px 5px 5px;
+      height: 45px;
+    
+    }
+    
+    
   }
   
   

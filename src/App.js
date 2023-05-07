@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ShowDetails from './components/ShowDetails';
 import Home from './components/Home';
 import BookingForm from './components/BookingForm';
-import Navbar from './components/Navbar';
+import NavbarLeft from './components/NavbarLeft';
 
 function App() {
  
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="home-container">
        <div className="nav-container">
-       <Navbar/>
+       <NavbarLeft/>
 
        </div>
         <div className="container mt-3">

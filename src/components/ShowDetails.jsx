@@ -25,7 +25,6 @@ function ShowDetails() {
         {show.summary} <br />
         <Link to={`/book/${id}`} className="btn btn-primary">Book Ticket</Link>
       </div>
-      
     </div>
   );
 }

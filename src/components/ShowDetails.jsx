@@ -22,7 +22,7 @@ function ShowDetails() {
 
       <div className='show-summary'>
       <h1 className="mb-3">{show.name}</h1>
-        {show.summary} <br />
+        <p dangerouslySetInnerHTML={{__html: show.summary}}></p>
         <Link to={`/book/${id}`} className="btn btn-primary">Book Ticket</Link>
       </div>
     </div>

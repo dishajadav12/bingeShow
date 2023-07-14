@@ -1,30 +1,47 @@
 import React,{ useState, useEffect } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCreditCard} from '@fortawesome/free-solid-svg-icons'
+import Spinner from './spinner/Spinner';
 import { useParams} from 'react-router-dom';
 import './BookingForm.css'
 
 
-function BookingForm() {
+ const BookingForm = (props)=> {
     const { id } = useParams();
     const [show, setShow] = useState(null);
+    const [loading,setLoading] = useState([]);
   
     useEffect(() => {
-      fetch(`https://api.tvmaze.com/shows/${id}`)
-        .then(response => response.json())
-        .then(data => setShow(data))
-        .catch(error => console.error(error))
-    }, [id]);
-  
+      const fetchData = async () => {
+        try {
+          props.setProgress(10);
+          const url = `https://api.tvmaze.com/shows/${id}`;
+          setLoading(true);
+          props.setProgress(40);
+          const response = await fetch(url);
+          props.setProgress(70);
+          const data = await response.json();
+          setShow(data);
+          setLoading(false);
+      props.setProgress(100);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+      fetchData();
+    }, []);
     if (!show) {
-      return <div>Loading...</div>;
+      return <div>        
+      </div>;
     }
-  
 
 return (
 <div>
 <div className='main-container-gold'>
       <div className="col-lg-12 col-md-12">
+      {loading && <Spinner/>}
+
         <div className="card form-container">
           <div className="card-body">
          

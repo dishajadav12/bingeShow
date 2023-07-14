@@ -1,23 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Spinner from './spinner/Spinner';
 
-function ShowDetails() {
+  const ShowDetails = (props) => {
   const { id } = useParams();
   const [show, setShow] = useState(null);
-
+  const [loading,setLoading] = useState([]);
+  
+  const fetchData = async () => {
+    try {
+      props.setProgress(10);
+      const url = `https://api.tvmaze.com/shows/${id}`;
+      setLoading(true);
+      props.setProgress(40);
+      const response = await fetch(url);
+      props.setProgress(70);
+      const data = await response.json();
+      setShow(data);
+      setLoading(false);
+      props.setProgress(100);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
-    fetch(`https://api.tvmaze.com/shows/${id}`)
-      .then(response => response.json())
-      .then(data => setShow(data))
-      .catch(error => console.error(error))
-  }, [id]);
-
+    fetchData();
+  }, []);
   if (!show) {
-    return <div>Loading...</div>;
+    return <div>        
+      {loading && <Spinner/>}
+    </div>;
   }
 
   return (
     <div className='main-container'>
+
       <img src={show.image?.medium} alt={show.name} className="show-image mb-3" />
 
       <div className='show-summary'>

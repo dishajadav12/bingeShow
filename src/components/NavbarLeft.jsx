@@ -10,7 +10,7 @@ const NavbarLeft = () => {
     <div>
 
 <Navbar expand="lg" variant="dark" className='navbar-menu-toggler'>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className='navbar-icon' />
+      <Navbar.Toggle aria-controls="basic-navbar-nav"  className='navbar-icon' />
       <Navbar.Brand href="#" className='toggler-heading'>Binge</Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
